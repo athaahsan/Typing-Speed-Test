@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root{
+    --bgColor: #3a4452;
+    --textPrimary: #fff;
+    --textSecondary: #666;
+    --primaryColor: #33ffd8;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bgColor);
+    color: var(--textPrimary);
+    font-size: 1.5rem;
+}
+
+h3 {
+    opacity: 80%;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+#header{
+    margin: 100px 0px 25px;
+}
+
+#time-container-in{
+    border-radius: 10px;
+    box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.1),inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+#time-container-out{
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    padding: 5px;
+    position: relative;
+}
+
+#time{
+    opacity: 80%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--primaryColor);
+}
+
+.animate{
+    animation: time-indicator 10s linear;
+}
+
+
+#button{
+    text-align: center;
+}
+
+#btn1{
+    opacity: 80%;
+    border: 0;
+    outline: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.1),5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px;
+    color: var(--primaryColor);
+    cursor: pointer;
+    margin: 50px 6px 20px;
+}
+
+#btn1:active{
+    opacity: 80%;
+    border: 0;
+    outline: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.1),inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px;
+    color: var(--primaryColor);
+    cursor: pointer;
+    margin: 50px 6px 20px;
+}
+
+#result-container-out{
+    margin-top: 25px;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+
+    border-radius: 10px;
+    
+    background: transparent;
+    padding: 0px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#wpm-container-in{
+    border-radius: 10px;
+    
+    background: transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+#cpm-container-in{
+    border-radius: 10px;
+    
+    background: transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+#acc-container-in{
+    border-radius: 10px;
+    
+    background: transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+#wpm{
+    opacity: 80%;
+}
+
+#wpm-string {
+    opacity: 80%;
+    font-size: 1rem;
+}
+
+#cpm{
+    opacity: 80%;
+}
+
+#cpm-string {
+    opacity: 80%;
+    font-size: 1rem;
+}
+
+#acc{
+    opacity: 80%;
+}
+
+#acc-string {
+    opacity: 80%;
+    font-size: 1rem;
+}
+
+#game-container-in{
+    border-radius: 10px;
+    box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.1),inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    padding: 20px;
+}
+
+#game-container-out{
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    padding: 5px;
+}
+
+div#game{
+    line-height: 35px;
+    height: 105px;
+    overflow: hidden;
+    position: relative;
+}
+
+div#game:focus{
+    outline: 0;
+}
+
+#words{
+    color: var(--textSecondary);
+    filter: blur(5px);
+}
+
+div.word{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#game:focus #words{
+    filter: blur(0);
+}
+
+#focus-error{
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    padding-top: 35px;
+    font-size: 1.25rem;
+    opacity: 80%;
+}
+
+#game:focus #focus-error{
+    display: none;
+}
+
+.letter.correct{
+    color: #fff;
+    opacity: 80%;
+}
+
+.letter.incorrect{
+    color: #f55;
+    opacity: 80%;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes time-indicator {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+#cursor{
+    display: none;
+    width: 2.25px;
+    height: 1.6rem;
+    background: var(--primaryColor);
+    position: fixed;
+    top: 36%;
+    left: 15%;
+    animation: blink 1s infinite;
+}
+
+#game:focus #cursor{
+    display: block;
+}
+
